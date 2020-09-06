@@ -1,0 +1,107 @@
+<div class="container">
+    <img src="../../../assets/aa.jpeg" class="logo"alt="Italian Trulli">
+    <h2 id="re">Sign up</h2>
+</div>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group" id="fn">
+        <label for="first_Name">First Name</label>
+        <input type="text" formControlName="first_Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.first_Name.errors }" />
+        <div *ngIf="submitted && f.first_Name.errors" class="invalid-feedback">
+            <div *ngIf="f.first_Name.errors.required">First Name is required</div>
+        </div>
+    </div>
+    <div class="form-group" id="fn">
+        <label for="middle_Name">Middle Name</label>
+        <input type="text" formControlName="middle_Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.middle_Name.errors }" />
+        <div *ngIf="submitted && f.middle_Name.errors" class="invalid-feedback">
+            <div *ngIf="f.middle_Name.errors.required">First Name is required</div>
+        </div>
+    </div>
+    <div class="form-group" id="ln">
+        <label for="last_Name">Last Name</label>
+        <input type="text" formControlName="last_Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.last_Name.errors }" />
+        <div *ngIf="submitted && f.last_Name.errors" class="invalid-feedback">
+            <div *ngIf="f.last_Name.errors.required">Last Name is required</div>
+        </div>
+    </div>
+
+    <!-- <div class="form-group" id="con">
+        <label for="Country">Country</label>
+        <input type="text" formControlName="Country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Country.errors }" />
+        <div *ngIf="submitted && f.Country.errors" class="invalid-feedback">
+            <div *ngIf="f.Country.errors.required">Country is required</div>
+        </div>
+    </div> -->
+     
+    <div class="form-group" id="sta">
+        <label for="state">State</label>
+        <input type="text" formControlName="state" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.state.errors }" />
+        <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+            <div *ngIf="f.state.errors.required">State is required</div>
+        </div>
+    </div>
+
+    <div class="form-group" id="cit">
+        <label for="city">City</label>
+        <input type="text" formControlName="city" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.city.errors }" />
+        <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+            <div *ngIf="f.city.errors.required">City is required</div>
+        </div>
+    </div>
+    <div class="form-group" id="pin">
+        <label for="pincode">Pincode</label>
+        <input type="text" formControlName="pincode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pincode.errors }" />
+        <div *ngIf="submitted && f.pincode.errors" class="invalid-feedback">
+            <div *ngIf="f.pincode.errors.required">Pincode is required</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="sel1">Documents (select one):</label>
+        <select class="form-control" id="sel1">
+          <option>Aadhar Card</option>
+          <option>Pan Card</option>
+        </select>
+        <br>
+        <input type="text" formControlName="id_type" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.id_type.errors }" />
+      <input type="file"id="aa"/>
+      </div>
+   
+
+
+   
+   
+    <div class="form-group">
+        <label for="mobile">Contact no</label>
+        <input type="text" formControlName="mobile" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />
+        <div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+            <div *ngIf="f.mobile.errors.required">Contact no is required</div>
+        </div>
+    </div>
+
+    
+    
+
+    <div class="form-group">
+        <label for="emailId">Username/E-mail</label>
+        <input type="text" formControlName="emailId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.emailId.errors }" />
+        <div *ngIf="submitted && f.emailId.errors" class="invalid-feedback">
+            <div *ngIf="f.emailId.errors.required">Username is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Register
+        </button>
+        <a routerLink="/login" class="btn btn-link">Cancel</a>
+    </div>
+</form>
