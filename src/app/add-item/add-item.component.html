@@ -1,0 +1,47 @@
+<imageonly>
+<h1>Add Item</h1>
+<div class="center">
+    <form [formGroup]="form">
+        <label>Brand</label>
+        <input type="text" name="name" formControlName="name" placeholder="Samsung,Nokia"><br><br>
+        
+        <label>Product Type</label>
+        <select name="product_type" formControlName="product_type">
+            <option value="Mobile">Mobile</option>
+            <option value="Camera">Camera</option>
+        </select>
+        <br><br>
+        
+        <label>Model</label>
+        <input type="text" name="model" formControlName="model" placeholder="J7 Nxt, J7 Prime"><br><br>
+
+        <!-- <input type="file" accept="image/*" /> -->
+        <label>Photo</label>
+        <input type="file" name="file" accept="image/*"><br><br>
+        <!--
+        <div class="form-group">
+            <label for="file">Photo</label>
+            <input 
+                formControlName="file"
+                id="file" 
+                type="file" 
+                class="form-control"
+                (change)="onFileChange($event)">
+            <div *ngIf="f.file.touched && f.file.invalid" class="alert alert-danger">
+                <div *ngIf="f.file.errors.required">File is required.</div>
+            </div>
+        </div>
+        <br><br>-->
+        <!--<img [src]="imageSrc" *ngIf="imageSrc" style="height: 100px; width:50px">-->
+        
+        <label>How Old:(in yrs)</label>
+        <input type="number" name="age" formControlName="age"><br><br>
+
+        <label>Price:</label>
+        <input type="number" name="price" formControlName="price"><br><br>
+        
+        <button type="submit" (click)="addItem(form.value)" [disabled]="!form.valid" id="add">Submit</button>
+        <!--<button type="submit" (click)="addItem(form.value)"  id="add">Submit</button>-->
+    </form>
+</div>
+</imageonly>

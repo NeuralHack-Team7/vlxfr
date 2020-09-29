@@ -1,0 +1,28 @@
+label{
+    display: inline-block;
+    width: 120px;
+    font-size: large;
+}
+button{
+    height: 40px;
+    width: 120px;
+    border-radius: 30px;
+    border: 0ch;
+    background-color: #4555ff;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+imageonly {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/652/confectionary.png);
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+	
+  /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+  }
